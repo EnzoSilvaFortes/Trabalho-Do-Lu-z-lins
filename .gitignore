@@ -1,0 +1,28 @@
+# Ambientes virtuais
+venv/
+env/
+__pycache__
+*.pyc
+
+# Logs e temporários
+*.log
+*.tmp
+*.swp
+
+# Arquivos grandes
+*.zip
+*.tar.gz
+*.csv
+*.pt
+*.h5
+*.weights
+*.mp4
+*.avi
+
+# Pastas do sistema
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+.vscode/

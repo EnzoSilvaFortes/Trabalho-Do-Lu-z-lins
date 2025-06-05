@@ -1,0 +1,6 @@
+
+train: /home/enzo-silva/meu_projeto_python/images/train
+val: /home/enzo-silva/meu_projeto_python/images/val
+
+nc: 1
+names: ['carro']
