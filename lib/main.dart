@@ -83,7 +83,7 @@ class _TrafficLightPageState extends State<TrafficLightPage> {
 
     _currentGreenIndex = (_currentGreenIndex + 1) % trafficLights.length;
 
-    const int baseGreenTime = 15;
+    const int baseGreenTime = 10;
     final int totalGreenTime = baseGreenTime + _extraTime;
     _extraTime = 0;
 
@@ -123,7 +123,6 @@ class _TrafficLightPageState extends State<TrafficLightPage> {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              // Controles
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: Row(
@@ -155,7 +154,6 @@ class _TrafficLightPageState extends State<TrafficLightPage> {
                 ),
               ),
               
-              // Tempo extra
               Padding(
                 padding: const EdgeInsets.only(bottom: 8.0),
                 child: Text(
@@ -164,7 +162,6 @@ class _TrafficLightPageState extends State<TrafficLightPage> {
                 ),
               ),
               
-              // Semáforos - agora em uma grade mais compacta
               GridView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
@@ -173,7 +170,7 @@ class _TrafficLightPageState extends State<TrafficLightPage> {
                   crossAxisCount: 2,
                   crossAxisSpacing: 8,
                   mainAxisSpacing: 8,
-                  childAspectRatio: 0.7, // Proporção mais compacta
+                  childAspectRatio: 0.7,
                 ),
                 itemCount: trafficLights.length,
                 itemBuilder: (context, index) {
@@ -235,10 +232,9 @@ class TrafficLightWidget extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8),
-            // Container do semáforo reduzido
             Container(
-              width: 60,  // Largura reduzida
-              height: 120, // Altura reduzida
+              width: 60,
+              height: 120,
               decoration: BoxDecoration(
                 color: Colors.grey[800],
                 borderRadius: BorderRadius.circular(10),
@@ -246,7 +242,6 @@ class TrafficLightWidget extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  // Luzes com tamanho reduzido
                   _buildLight(Colors.red, trafficLight.state == TrafficLightState.red, 30),
                   _buildLight(Colors.yellow, trafficLight.state == TrafficLightState.yellow, 30),
                   _buildLight(Colors.green, trafficLight.state == TrafficLightState.green, 30),
