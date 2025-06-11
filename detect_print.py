@@ -2,7 +2,6 @@ import cv2
 from ultralytics import YOLO
 import time
 
-# Carregue seu modelo treinado (ajuste o caminho se necessário)
 model = YOLO('runs/detect/train/weights/best.pt')
 
 # Abre a webcam (0 é a webcam padrão)
